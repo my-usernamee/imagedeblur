@@ -2,6 +2,7 @@ Multi-Stage Image Deblurring
 
 PyTorch implementation of a 3-stage U-Net-based image deblurring network that combines Supervised Attention Modules (SAM) with Sobel edge guidance and Cross-Stage Feature Fusion (CSFF).  The script is designed for Kaggle/Colab-style execution and includes dataset loading, training, checkpointing, and simple qualitative visualization on held-out samples. 
 Features
+
 	•	GoPro blur/sharp paired dataset loader (expects Kaggle dataset layout under  DBlur/Gopro/... ). 
 	•	3-stage deblurring architecture:
 	•	 UNetStage : per-stage encoder–decoder U-Net producing an RGB output + intermediate features. 
@@ -10,6 +11,7 @@ Features
 	•	Multi-stage L1 training loss with stage weights  0.5, 0.5, 1.0 . 
 	•	CosineAnnealing learning-rate scheduler and best-model saving. 
 	•	Inference helper  deblur_image()  that resizes input to 256×256 for prediction and restores original dimensions. 
+	
 Project structure
 This repo currently consists of a single training script:
 	•	 v2_sam_-_csff.py : end-to-end pipeline (install deps, dataset, model, training loop, and visualization). 
